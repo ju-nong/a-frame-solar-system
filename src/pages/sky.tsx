@@ -9,7 +9,7 @@ import {
     Sphere,
 } from "@belivvr/aframe-react";
 
-function Home() {
+function sky() {
     const [rendered, setRendered] = useState<boolean>(false);
 
     useEffect(() => {
@@ -27,33 +27,30 @@ function Home() {
     return (
         <Scene>
             <Assets>
-                <Image id="space" src="space.jpg" />
+                <Image id="bitch" src="bitch.jpg" />
+                <Image id="mountain" src="mountain.jpg" />
+                <Image id="earth" src="earth.jpg" />
             </Assets>
 
-            <Sky id="space-background" radius={10000} src="#space" />
-
-            <Sphere
+            <Sky
+                id="image-3601"
+                radius={10}
+                src="#bitch"
+                position={{ x: 27, y: 0, z: -71 }}
+            />
+            <Sky
+                id="image-3602"
                 radius={20}
-                material={{
-                    src: "earth.jpg",
-                }}
-                position={{
-                    x: 0,
-                    y: 0,
-                    z: -35,
-                }}
-                animation={{
-                    property: "rotation",
-                    to: "0 360 0",
-                    loop: 100000,
-                    dur: 5000,
-                    easing: "linear",
-                }}
+                src="#mountain"
+                position={{ x: -17, y: 0, z: -27 }}
             />
 
+            <Sky id="image-3603" radius={5} src="#earth" />
+
+            <Entity id="#bitch" />
             <Camera wasdControlsEnabled={true} />
         </Scene>
     );
 }
 
-export { Home as default };
+export { sky as default };
