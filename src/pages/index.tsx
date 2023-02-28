@@ -8,6 +8,7 @@ import {
     Camera,
     Sphere,
     Box,
+    Light,
 } from "@belivvr/aframe-react";
 
 function Home() {
@@ -33,6 +34,32 @@ function Home() {
 
             <Sky id="space-background" radius={10000} src="#space" />
 
+            <Light type="spot" intensity={2} target="#sun">
+                <Sphere
+                    id="sun"
+                    radius={20}
+                    material={{
+                        src: "sun.jpg",
+                    }}
+                    position={{
+                        x: -60,
+                        y: 0,
+                        z: -35,
+                    }}
+                    animation={{
+                        property: "rotation",
+                        to: "0 360 0",
+                        loop: 100000,
+                        dur: 25000,
+                        easing: "linear",
+                    }}
+                    light={{
+                        type: "ambient",
+                        color: "#888",
+                    }}
+                />
+            </Light>
+
             <Sphere
                 radius={20}
                 material={{
@@ -46,7 +73,7 @@ function Home() {
                 animation={{
                     property: "rotation",
                     to: "0 360 0",
-                    loop: 100000,
+                    loop: 500000,
                     dur: 5000,
                     easing: "linear",
                 }}
@@ -67,7 +94,7 @@ function Home() {
                 animation={{
                     property: "rotation",
                     to: "360 360 0",
-                    loop: 100000,
+                    loop: 200000,
                     dur: 2000,
                     easing: "linear",
                 }}
