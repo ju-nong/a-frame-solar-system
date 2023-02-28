@@ -34,31 +34,30 @@ function Home() {
 
             <Sky id="space-background" radius={10000} src="#space" />
 
-            <Light type="spot" intensity={2} target="#sun">
-                <Sphere
-                    id="sun"
-                    radius={20}
-                    material={{
-                        src: "sun.jpg",
-                    }}
-                    position={{
-                        x: -60,
-                        y: 0,
-                        z: -35,
-                    }}
-                    animation={{
-                        property: "rotation",
-                        to: "0 360 0",
-                        loop: 100000,
-                        dur: 25000,
-                        easing: "linear",
-                    }}
-                    light={{
-                        type: "ambient",
-                        color: "#888",
-                    }}
-                />
-            </Light>
+            <Sphere
+                id="sun"
+                radius={20}
+                material={{
+                    src: "sun.jpg",
+                }}
+                position={{
+                    x: -60,
+                    y: 0,
+                    z: -35,
+                }}
+                animation={{
+                    property: "rotation",
+                    to: "0 360 0",
+                    loop: 100000,
+                    dur: 25000,
+                    easing: "linear",
+                }}
+                light={{
+                    type: "point",
+                    color: "#fff",
+                    intensity: 3,
+                }}
+            />
 
             <Sphere
                 radius={20}
@@ -100,7 +99,18 @@ function Home() {
                 }}
             />
 
-            <Camera wasdControlsEnabled={true} />
+            <Entity
+                position={{
+                    x: 0,
+                    y: 1.6,
+                    z: 0,
+                }}
+            />
+
+            <Camera
+                wasdControlsEnabled={true}
+                wasdControls={{ fly: true, acceleration: 200 }}
+            />
         </Scene>
     );
 }
