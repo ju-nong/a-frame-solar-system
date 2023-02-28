@@ -39,11 +39,12 @@ function Home() {
                 radius={20}
                 material={{
                     src: "sun.jpg",
+                    shader: "flat",
                 }}
                 position={{
-                    x: -60,
-                    y: 0,
-                    z: -35,
+                    x: 0,
+                    y: -100,
+                    z: -150,
                 }}
                 animation={{
                     property: "rotation",
@@ -54,8 +55,7 @@ function Home() {
                 }}
                 light={{
                     type: "point",
-                    color: "#fff",
-                    intensity: 3,
+                    intensity: 2,
                 }}
             />
 
@@ -65,9 +65,9 @@ function Home() {
                     src: "earth.jpg",
                 }}
                 position={{
-                    x: 0,
-                    y: 0,
-                    z: -35,
+                    x: 100,
+                    y: -100,
+                    z: -150,
                 }}
                 animation={{
                     property: "rotation",
@@ -86,9 +86,9 @@ function Home() {
                     src: "yong_sook.jpg",
                 }}
                 position={{
-                    x: 50,
-                    y: 0,
-                    z: -35,
+                    x: -100,
+                    y: -100,
+                    z: -150,
                 }}
                 animation={{
                     property: "rotation",
@@ -96,14 +96,6 @@ function Home() {
                     loop: 200000,
                     dur: 2000,
                     easing: "linear",
-                }}
-            />
-
-            <Entity
-                position={{
-                    x: 0,
-                    y: 1.6,
-                    z: 0,
                 }}
             />
 
