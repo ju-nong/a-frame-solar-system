@@ -7,6 +7,7 @@ import {
     Entity,
     Camera,
     Sphere,
+    Box,
 } from "@belivvr/aframe-react";
 
 function Home() {
@@ -39,6 +40,27 @@ function Home() {
                 }}
                 position={{
                     x: 0,
+                    y: 0,
+                    z: -35,
+                }}
+                animation={{
+                    property: "rotation",
+                    to: "0 360 0",
+                    loop: 100000,
+                    dur: 5000,
+                    easing: "linear",
+                }}
+            />
+
+            <Box
+                width={20}
+                height={20}
+                depth={20}
+                material={{
+                    src: "yong_sook.jpg",
+                }}
+                position={{
+                    x: 50,
                     y: 0,
                     z: -35,
                 }}
