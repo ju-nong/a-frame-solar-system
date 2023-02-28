@@ -66,9 +66,9 @@ function Home() {
                 }}
                 animation={{
                     property: "rotation",
-                    to: "0 360 0",
+                    to: "360 360 0",
                     loop: 100000,
-                    dur: 5000,
+                    dur: 2000,
                     easing: "linear",
                 }}
             />
