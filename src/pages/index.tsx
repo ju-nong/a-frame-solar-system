@@ -24,8 +24,8 @@ function Home() {
                 id="solar-system"
                 position={{
                     x: 0,
-                    y: -100,
-                    z: -150,
+                    y: -300,
+                    z: -450,
                 }}
                 animation={{
                     property: "rotation",
@@ -89,7 +89,8 @@ function Home() {
                     height={20}
                     depth={20}
                     material={{
-                        src: "yong_sook.jpg",
+                        // src: "yong_sook.jpg",
+                        src: "ari.jpg",
                     }}
                     position={{
                         x: -300,
