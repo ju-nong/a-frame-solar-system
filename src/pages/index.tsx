@@ -1,5 +1,13 @@
 import { useEffect, useState } from "react";
-import { Scene, Sky, Entity, Camera, Sphere, Box } from "@belivvr/aframe-react";
+import {
+    Scene,
+    Sky,
+    Entity,
+    Camera,
+    Sphere,
+    Box,
+    Cursor,
+} from "@belivvr/aframe-react";
 
 function Home() {
     const [rendered, setRendered] = useState<boolean>(false);
@@ -13,7 +21,7 @@ function Home() {
     }, [setRendered]);
 
     if (!rendered) {
-        return <>loading</>;
+        return <>오아리 최고</>;
     }
 
     return (
@@ -110,7 +118,39 @@ function Home() {
             <Camera
                 wasdControlsEnabled={true}
                 wasdControls={{ fly: true, acceleration: 200 }}
-            />
+            >
+                <Cursor
+                    id="cursor"
+                    material={{
+                        color: "#fff",
+                    }}
+                    animation__click={{
+                        property: "scale",
+                        startEvents: ["click"],
+                        from: "0.1 0.1 0.1",
+                        to: "1 1 1",
+                        dur: 150,
+                    }}
+                    animation__fusing={{
+                        property: "fusing",
+                        startEvents: ["fusing"],
+                        from: "1 1 1",
+                        to: "0.1 0.1 0.1",
+                        dur: 1500,
+                    }}
+                    cursor={{
+                        downEvents: ["mouseenter"],
+                    }}
+                    // event-set__mouseenter={{
+                    //     _event: "mouseenter",
+                    //     color: "green",
+                    // }}
+                    // event-set__mouseleave={{
+                    //     _event: "mouseleave",
+                    //     color: "#fff",
+                    // }}
+                />
+            </Camera>
         </Scene>
     );
 }
