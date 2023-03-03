@@ -73,7 +73,7 @@ function MyCursor({ speed, fly }: MyCursorProps) {
       const camera = document.getElementById("myCamera");
 
       console.log(camera?.getAttribute("position"));
-      setJumping(true)d;
+      setJumping(true);
     }
   });
 
