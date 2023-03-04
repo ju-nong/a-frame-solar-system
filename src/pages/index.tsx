@@ -46,6 +46,10 @@ function Home() {
         el.addEventListener("click", function () {
           router.push("/sky");
         });
+
+        el.addEventListener("touchstart", function () {
+          router.push("/sky");
+        });
       },
     });
   }
