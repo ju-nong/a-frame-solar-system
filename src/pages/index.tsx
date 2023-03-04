@@ -44,10 +44,17 @@ function Home() {
         });
 
         el.addEventListener("click", function () {
+          alert("click");
           router.push("/sky");
         });
 
         el.addEventListener("touchstart", function () {
+          alert("touchStart");
+          router.push("/sky");
+        });
+
+        el.addEventListener("touchend", function () {
+          alert("touched");
           router.push("/sky");
         });
       },
